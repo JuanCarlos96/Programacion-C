@@ -13,6 +13,7 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>Ejercicios_DiagramasDeFlujo</itemPath>
+      <itemPath>Vectores</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -39,6 +40,8 @@
       </compileType>
       <item path="Ejercicios_DiagramasDeFlujo" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Vectores" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -63,6 +66,8 @@
         </asmTool>
       </compileType>
       <item path="Ejercicios_DiagramasDeFlujo" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Vectores" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

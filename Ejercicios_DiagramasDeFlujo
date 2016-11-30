@@ -317,16 +317,28 @@ Ejercicio 11
 
 bool esPrimo(int a){
     
+    for(int i=2;i<a;i++){
+        if(a%i==0){
+            return false;
+        }
+    }
+    return true;
     
     
 }
+
+
 int main(int argc, char** argv) {
     
     int n;
     printf("Introduzca un número:\n");
     scanf("%d",&n);
     
-    printf("%d",esPrimo(n));
+    if(esPrimo(n)){
+        printf("El número es primo");
+    }else{
+        printf("El número no es primo");
+    }
     
     return 0;
 }

@@ -1,0 +1,137 @@
+Ejercicio 4
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(int argc, char** argv) {
+    
+    int aleatorio,vector[20],i,cont;
+    
+    srand(time(NULL));
+    
+    for(i=0; i<20; i++) {
+        vector[i]=(rand() % 21)-10;
+    }
+    
+    for(i=0; i<20; i++){
+        if(vector[i]>0){
+            cont++;
+            printf("%d ",vector[i]);
+        }
+    }
+    
+    printf("\nSe han generado %d números positivos",cont);
+
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 6
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    
+    int vector[20],cont;
+    cont=2;
+    
+    for(int i=0; i<20; i++){
+        vector[i]=cont;
+        cont+=2;
+    }
+    
+    for (int i=19; i>=0; i--){
+        printf("%d\n",vector[i]);
+    }
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 7
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    
+    int vector[5],mult[5];
+    
+    printf("Introduzca 5 números:\n");
+    
+    for(int i=0; i<5; i++){
+        scanf("%d",&vector[i]);
+    }
+    
+    for(int i=0; i<5; i++){
+        mult[i]=vector[i]*2;
+    }
+    
+    for(int i=0; i<5; i++){
+        printf("\n2 x %d = %d",vector[i],mult[i]);
+    }
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 8
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    
+    int vector[5],inverso[5];
+    
+    printf("Introduzca 5 números:\n");
+    
+    for(int i=0; i<5; i++){
+        scanf("%d",&vector[i]);
+    }
+    
+    for (int i=4,j=0; i>=0; i--,j++){
+        inverso[i]=vector[j];
+    }
+    
+    for(int i=0; i<5; i++){
+        printf("%d ",vector[i]);
+    }
+    
+    printf("\n");
+    
+    for(int i=0; i<5; i++){
+        printf("%d ",inverso[i]);
+    }
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 9
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    
+    int vector[10],suma,resta,media;
+    
+    printf("Introduzca 10 números:\n");
+    
+    for(int i=0; i<10; i++){
+        scanf("%d",&vector[i]);
+    }
+    
+    for(int i=0; i<10; i++){
+        suma+=vector[i];
+        resta-=vector[i];
+    }
+    
+    media=suma/10;
+    
+    printf("La suma de todos los números es: %d",suma);
+    printf("\nLa resta de todos los números es: %d",resta);
+    printf("\nLa media de todos los números es: %d",media);
+    
+    return 0;
+}
+--------------------------------------------------------------------------------

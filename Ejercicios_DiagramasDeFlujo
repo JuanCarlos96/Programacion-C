@@ -135,6 +135,7 @@ int main(int argc, char** argv) {
     
     printf("Introduzca un número: ");
     int n,i,suma,x;
+    
     scanf("%d",&n);
     suma=0;
     
@@ -203,6 +204,33 @@ int main(int argc, char** argv) {
     return 0;
 }
 --------------------------------------------------------------------------------
+Ejercicio 7
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+int main(int argc, char** argv) {
+    
+    int num,max=INT_MIN,tam;
+    
+    printf("Introduzca el número de elementos: ");
+    scanf("%d",&tam);
+    
+    for(int i=1;i<=tam;i++){
+        printf("Introduzca un número: ");
+        scanf("%d",&num);
+        
+        if(num>max){
+            max=num;
+        }
+    }
+    
+    printf("El mayor es %d",max);
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
 Ejercicio 8
         
 #include <stdio.h>
@@ -256,6 +284,28 @@ int main(int argc, char** argv) {
     
     printf("El mayor es %d",max);
     printf("\nEl mínimo es %d",min);
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 10
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    
+    int n,m;
+    
+    printf("Introduzca dos números:\n");
+    scanf("%d",&n);
+    scanf("%d",&m);
+   
+    if(n>m){
+        printf("%d>%d",n,m);
+    }else{
+        printf("%d>%d",m,n);
+    }
     
     return 0;
 }

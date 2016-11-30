@@ -1,0 +1,283 @@
+Ejercicio 1
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    
+    int a;
+    
+    printf("Introduzca un número: ");
+    
+    scanf("%d",&a);
+    
+    if (a==0){
+        printf("Es cero");    
+    }
+    else {
+        if (a>0){
+            printf("Es positivo");
+        }
+        else{
+            printf("Es negativo");
+        }
+    }
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 2
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    
+    int a,i;
+    
+    printf("Escriba un número:");
+    scanf("%d",&a);
+    
+    for(i=1; i<=a; i++){
+        printf("%d",i);
+    }
+    return 0;
+}
+
+/*
+ Parámetros de tipo:
+ %d --> número int
+ %f --> número float
+ %s --> cadena
+ */
+--------------------------------------------------------------------------------
+Ejercicio 3 (while)
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(int argc, char** argv) {
+    
+    int n,aleatorio;
+    
+    srand(time(NULL));
+    aleatorio = rand() % 11;
+    
+    printf("Adivine un número entre entre 0 y 10: ");
+    scanf("%d",&n);
+    
+    while(n!=aleatorio){
+        printf("\nNo ha acertado.\nAdivine un número entre 0 y 10: ");
+        scanf("%d",&n);
+    }      
+    
+    printf("Has acertado");
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 3 (for)
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(int argc, char** argv) {
+    
+    int n,aleatorio;
+    
+    srand(time(NULL));
+    aleatorio = rand() % 11;
+    
+    printf("Adivine un número entre entre 0 y 10: ");
+    scanf("%d",&n);
+    
+    for(;n!=aleatorio;){
+        printf("\nNo ha acertado.\nAdivine un número entre 0 y 10: ");
+        scanf("%d",&n);
+    }      
+    
+    printf("Has acertado");
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 3 (do while)
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(int argc, char** argv) {
+    
+    int n,aleatorio;
+    
+    srand(time(NULL));
+    aleatorio = rand() % 11;
+    
+    do{
+        printf("\nAdivine un número entre 0 y 10: ");
+        scanf("%d",&n);
+    } while(n!=aleatorio);  
+    
+    printf("Has acertado");
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 4
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    
+    printf("Introduzca un número: ");
+    int n,i,suma,x;
+    scanf("%d",&n);
+    suma=0;
+    
+    for(i=1;i<=n;i++){
+        suma=suma+i;
+    }
+    printf("%d",suma);
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 5
+        
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    
+    int a,b;
+    
+    do{
+        printf("Introduzca dos números enteros: \n");
+        scanf("%d",&a);
+        scanf("%d",&b);
+    }while(a==b);
+    
+    if (a==b){
+        printf("Los números son iguales");
+    }else{
+        if (a>b){
+            printf("%d es mayor que %d",a,b);
+        }else{
+            printf("%d es mayor que %d",b,a);
+        }
+    }
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 6 (inacabado)
+        
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    
+    int a,b,c;
+    
+    do{
+        printf("Introduzca dos números enteros:\n");
+        scanf("%d",&a);
+        scanf("%d",&b);
+        scanf("%d",&c);
+    }while(a==b || a==c || b==c);
+    
+    if (a>b && b>c){
+            printf("%d>%d>%d"a,b,c);
+    }else{
+        if(a>c && c>b){
+            printf("%d>%d>%d"a,c,b);
+        }else{
+            
+        }
+    }
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 8
+        
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    
+    int tam,par,impar;
+    
+    printf("Introduzca el número de elementos:\n");
+    scanf("%d",&tam);
+    
+    for(int i=1;i<=tam;i++){
+        if(i%2==0){
+            par+=i;
+        }else{
+            impar+=i;
+        }
+    }
+    
+    printf("La suma de los pares es %d",par);
+    printf("\nLa suma de los impares es %d",impar);
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 9
+        
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+int main(int argc, char** argv) {
+    
+    int num,tam,min=INT_MAX,max=INT_MIN;
+    
+    printf("Introduce el número de elementos:");
+    scanf("%d",&tam);
+    
+    for(int i=1;i<=tam;i++){
+        printf("Introduce un número:");
+        scanf("%d",&num);
+        
+        if(num<min){
+            min=num;
+        }
+        if(num>max){
+            max=num;
+        }
+    }
+    
+    printf("El mayor es %d",max);
+    printf("\nEl mínimo es %d",min);
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 11
+        
+#include <stdio.h>
+#include <stdlib.h>
+
+bool esPrimo(int a){
+    
+    
+    
+}
+int main(int argc, char** argv) {
+    
+    int n;
+    printf("Introduzca un número:\n");
+    scanf("%d",&n);
+    
+    printf("%d",esPrimo(n));
+    
+    return 0;
+}
+--------------------------------------------------------------------------------

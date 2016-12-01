@@ -135,3 +135,88 @@ int main(int argc, char** argv) {
     return 0;
 }
 --------------------------------------------------------------------------------
+Ejercicio 10
+        
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <limits.h>
+
+int main(int argc, char** argv) {
+    
+    int vector[10],media,suma,distancia,valores[10],min=INT_MAX;
+    
+    printf("Introduce 10 números:\n");
+    
+    //Leo los diez números y los paso a una posición en el vector
+    for(int i=0; i<10; i++){
+        scanf("%d",&vector[i]);
+    }
+    
+    //Calculo la suma de todos ellos para luego calcular la media
+    for(int i=0; i<10; i++){
+        suma+=vector[i];
+    }
+    
+    media=suma/10;
+    printf("La media es %d",media);
+    
+    //Calculo la distancia entre los números y la media
+    for(int i=0; i<10; i++){
+        distancia=fabs(media-vector[i]);
+        valores[i]=distancia;        
+    }
+    
+    //Averiguo la minima distancia
+    for(int i=0; i<10; i++){
+        if(valores[i]<min){
+            min=valores[i];
+        }
+    }
+    
+    /*Comparo el valor absoluto de las restas para ver cual coincide con el minimo
+     y así averiguar que número es el más cercano*/
+    for(int i=0; i<10; i++){
+        if(fabs(media-vector[i])==min){
+            printf("\nEl número más cercano es el %d",vector[i]);
+        }
+    }
+    
+    return 0;
+}
+--------------------------------------------------------------------------------
+Ejercicio 11        
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char** argv) {
+    
+    int vector[10],num;
+    bool encontrado=false;
+    
+    printf("Introduce 10 números:\n");
+    
+    //Leo los diez números y los paso a una posición en el vector
+    for(int i=0; i<10; i++){
+        scanf("%d",&vector[i]);
+    }
+    
+    printf("\nIntroduzca un número del vector: ");
+    scanf("%d",&num);
+    
+    //Comparo el valor introducido con los valores del vector
+    for(int i=0; i<10 && encontrado==false; i++){
+        if(num==vector[i]){
+            encontrado=true;
+            printf("El número introducido está en la posición %d",i);
+        }
+    }
+    
+    if(encontrado==false){
+        printf("El número no se encuentra en el vector");
+    }
+    
+    return 0;
+}
+--------------------------------------------------------------------------------

@@ -3,24 +3,30 @@
 
 int main(int argc, char** argv) {
     
-    int vector[10],suma,resta,media;
+    int vector[10],num;
+    bool encontrado=false;
     
-    printf("Introduzca 10 números:\n");
+    printf("Introduce 10 números:\n");
     
+    //Leo los diez números y los paso a una posición en el vector
     for(int i=0; i<10; i++){
         scanf("%d",&vector[i]);
     }
     
-    for(int i=0; i<10; i++){
-        suma+=vector[i];
-        resta-=vector[i];
+    printf("\nIntroduzca un número del vector: ");
+    scanf("%d",&num);
+    
+    //Comparo el valor introducido con los valores del vector
+    for(int i=0; i<10 && encontrado==false; i++){
+        if(num==vector[i]){
+            encontrado=true;
+            printf("El número introducido está en la posición %d",i);
+        }
     }
     
-    media=suma/10;
-    
-    printf("La suma de todos los números es: %d",suma);
-    printf("\nLa resta de todos los números es: %d",resta);
-    printf("\nLa media de todos los números es: %d",media);
+    if(encontrado==false){
+        printf("El número no se encuentra en el vector");
+    }
     
     return 0;
 }

@@ -224,15 +224,16 @@ int main(int argc, char** argv) {
     return 0;
 }
 --------------------------------------------------------------------------------
-Ejercicio 7 (longitud máxima) [inacabado]
+Ejercicio 7
         
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(int argc, char** argv) {
     
     char cadena1[250],cadena2[250],juntas[250];
-    int i=0,j=0,longitud1,longitud2,longmax;
+    int i=0,j=0,k=0,longitud1,longitud2,longmin,longmax;
     
     printf("Introduce una palabra: ");
     gets(cadena1);
@@ -254,81 +255,51 @@ int main(int argc, char** argv) {
         j++;
     }
     
-    //Asigno la longitud máxima a una variable
+    //Asigno la longitud mínima y máxima a una variable
     if (longitud1>longitud2){
+        longmin=longitud2;
         longmax=longitud1;
     }else{
         if(longitud1<longitud2){
-            longmax=longitud2;
-        }else{
-            longmax=longitud1;
-        }
-    }
-    
-    //Asigno cada caracter por separado a un nuevo vector
-    for (int i=0, j=0; i<=longmax; i++){
-        juntas[j]=cadena1[i];
-        j++;
-        juntas[j]=cadena2[i];
-        j++;
-    }
-    
-    printf("%s",juntas);
-    
-    return 0;
-}
---------------------------------------------------------------------------------
-Ejercicio 7 (longitud mínima) [inacabado]
-        
-#include <stdio.h>
-#include <stdlib.h>
-
-int main(int argc, char** argv) {
-    
-    char cadena1[250],cadena2[250],juntas[250];
-    int i=0,j=0,longitud1,longitud2,longmin,diferencia;
-    
-    printf("Introduce una palabra: ");
-    gets(cadena1);
-    
-    printf("Introduce otra palabra: ");
-    gets(cadena2);
-    
-    //Averiguo la longitud de la cadena1
-    longitud1=0;
-    while (cadena1[i]!='\0'){
-        longitud1++;
-        i++;
-    }
-    
-    //Averiguo la longitud de la cadena2
-    longitud2=0;
-    while (cadena2[j]!='\0'){
-        longitud2++;
-        j++;
-    }
-    
-    //Asigno la longitud máxima a una variable
-    if (longitud1>longitud2){
-        longmin=longitud2;
-        diferencia=longitud1-longitud2;
-    }else{
-        if(longitud1<longitud2){
             longmin=longitud1;
-            diferencia=longitud2-longitud1;
-        }else{
-            longmin=longitud2;
+            longmax=longitud2;
+        }
+    }
+        
+    //Asigno cada caracter por separado a un nuevo vector hasta la longitud minima
+    for (int i=0; i<longmin; i++){
+        juntas[k]=cadena1[i];
+        k++;
+        juntas[k]=cadena2[i];
+        k++;
+    }
+    
+    //Si la cadena1 es más larga, asigno los caracteres restantes que queden
+    if(strlen(cadena1)>strlen(cadena2)){
+        for (int i=longmin; i<=longmax; i++){
+            juntas[k]=cadena1[i];
+            k++;
         }
     }
     
-    //Asigno cada caracter por separado a un nuevo vector
-    for (int i=0, j=0; i<=longmin; i++){
-        juntas[j]=cadena1[i];
-        j++;
-        juntas[j]=cadena2[i];
-        j++;
+    //Si la cadena2 es más larga, asigno los caracteres restantes que queden
+    if(strlen(cadena2)>strlen(cadena1)){
+        for (int i=longmin; i<=longmax; i++){
+            juntas[k]=cadena2[i];
+            k++;
+        }
     }
-        
+    
+    //Si las dos cadenas son iguales, asigno los caracteres sin importar la longitud
+    if(strlen(cadena1)==strlen(cadena2)){
+        for (int i=0, j=0; i<=strlen(cadena1); i++){
+            juntas[j]=cadena1[i];
+            j++;
+            juntas[j]=cadena2[i];
+            j++;
+        }
+    }
+    
     printf("%s",juntas);
     
     return 0;

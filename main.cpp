@@ -1,41 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-bool indexOf(){
-    
-    
-    
-}
+#include <string.h>
 
 int main(int argc, char** argv) {
     
-    //Pido la frase al usuario
-    printf("Introduzca una frase: ");
+    char cadena[250],cadena2[250];
+    int longitud;
+    
+    printf("Introduce una cadena: ");
     gets(cadena);
+    longitud=strlen(cadena);
     
-    //Averiguo la longitud de la cadena
-    int i, longitud=0;
-    while (cadena[i]!='\0'){
-        longitud++;
-        i++;
+    for(int i=longitud-1, j=0; i>=0; i--, j++){
+        cadena2[j]=cadena[i];
     }
     
-    //Pido el carácter que quiere buscar
-    printf("Introduzca un carácter: ");
-    scanf("%c",&c);
-    
-    //Busco ese carácter por todo el vector, si lo encuentra devuelve un mensaje
-    //con la posición
-    for(int i=0; i<=longitud; i++){
-        if(c==cadena[i]){
-            encontrado=true;
-            printf("El carácter introducido está en la posición %d\n",i);
-        }
-    }
-    
-    if(encontrado==false){
-        printf("No se encuentra el carácter en el vector");
-    }
+    printf("La cadena es: %s\n",cadena);
+    printf("La inversa es: %s\n",cadena2);
     
     return 0;
 }

@@ -10,28 +10,33 @@ int main(int argc, char** argv) {
     
     for(int i=0; i<20; i++){
         vector[i]=(rand() % 21)-10;
-        printf("%d",vector[i]);
+        printf("%d,",vector[i]);
     }
     
-    printf("\nIntroduzca un número del vector: ");
+    printf("\nIntroduzca un número del vector: (11 para terminar)");
     scanf("%d",&num);
     
     while (num!=11){
-        if (num>=-10 && num<=10){
-            for(int i=0; i<20; i++){
-                if(num==vector[i]){
+        if (num<=10 && num>=-10){
+            for (int i=0; i<20; i++){
+                if (vector[i]==num){
+                    printf("El número está en la posición: %d\n",i);
                     encontrado=true;
-                    printf("El número introducido está en la posición %d\n",i);
                 }else{
-                    printf("Capullo");
+                    encontrado=false;
                 }
             }
+        }else{
+            printf("El número no está");
         }
+        if (encontrado==false){
+            printf("El número no está");
+        }
+    printf("\nIntroduzca un número del vector: (11 para terminar)");
+    scanf("%d",&num);
     }
     
-    if(encontrado==false){
-        printf("El número no se encuentra en el vector");
-    }
+    printf("Adiós");
     
     return 0;
 }
